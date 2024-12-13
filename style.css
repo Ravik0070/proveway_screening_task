@@ -1,0 +1,237 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+main {
+  width: 50%;
+  margin: 40px auto 0;
+}
+
+/* Header */
+main header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+main header span {
+  flex: 1;
+  height: 1px;
+  background-color: #c8c8c8;
+}
+main header h1 {
+  text-align: center;
+  color: #ff6b82;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 2rem;
+}
+.radio-container {
+  position: relative;
+  border: 1px solid #c8c8c8;
+  border-radius: 8px;
+  transition: border-width 0.3s, border-color 0.3s;
+}
+.popular-tag {
+  position: absolute;
+  top: -10%;
+  right: 2%;
+  width: 20%;
+  max-width: 150px;
+  padding: 0.4em;
+  text-align: center;
+  color: #ffffff;
+  background-color: #ff6b82;
+  font-size: 0.8em;
+  font-weight: 600;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.info-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+}
+.radio-container .info-container input {
+  display: none;
+}
+.custom-radio {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+.radio-container input:checked + .custom-radio {
+  border-color: #ff6b82;
+  background-color: #ff6b82;
+}
+.radio-container input:checked + .custom-radio::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 21px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: transparent;
+}
+.radio-container:has(input:checked) {
+  border-width: 3px;
+  border-color: #ff6b82;
+}
+
+/* item select */
+.select-container {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+  margin-left: 9%;
+}
+.item {
+  margin-bottom: 20px;
+}
+.options {
+  display: flex;
+  justify-content: space-between;
+}
+.option {
+  width: 45%;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Info Section */
+.info {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+.unit-container {
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
+.unit-container .unit {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.unit-container .standard {
+  font-size: 1em;
+  font-weight: 400;
+  padding-top: 5px;
+}
+.unit-container span {
+  font-weight: 400;
+  color: #fff;
+  background-color: #ff6b82;
+  padding: 3px;
+  font-size: 0.8rem;
+}
+.price-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  color: #333;
+}
+.price-container div:nth-child(1) {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.price-container div:nth-child(2) {
+  font-size: 1rem;
+  color: #888;
+  text-decoration: line-through;
+}
+
+/* Footer */
+.total-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: 10px;
+  padding: 0 20px;
+}
+.total-container .total {
+  color: #ff6b82;
+}
+.addBtn {
+  margin-top: 1rem;
+  padding: 17px 0;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff6b82;
+  color: #fff;
+  font-size: 1.1em;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.addBtn:hover {
+  background-color: #ff4e63;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.powered {
+  font-style: italic;
+  color: #0000007d;
+  text-align: end;
+}
+
+/* media query */
+@media (max-width: 768px) {
+  .popular-tag {
+    width: 40%;
+    font-size: 0.7rem;
+    top: -5%;
+  }
+}
+@media (max-width: 480px) {
+  .popular-tag {
+    width: 60%;
+    font-size: 0.6rem;
+    top: -2%;
+  }
+}
+
+/* Keyframes */
+@keyframes selectAnimation {
+  0% {
+    transform: scale(1); /* Start with normal size */
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.95); /* Shrink slightly */
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.05); /* Grow slightly */
+    opacity: 1; /* Reset opacity */
+  }
+}
