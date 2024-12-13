@@ -1,4 +1,4 @@
 # Steps to run
 
-- clone repository
+- Clone repository
 - Open index.html in your browser
